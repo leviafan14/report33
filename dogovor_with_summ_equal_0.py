@@ -1,7 +1,7 @@
 import csv
 
 # Имя файла, в котором нужно искать записи
-file_name = r"C:\My_files\Anothers\Talisman\14.csv"
+file_name = r"C:\My_files\Anothers\Talisman\12.csv"
 # Имя выходного файла c найденными записями Excel
 output_file_name = "output.xlsx"
 
@@ -22,7 +22,7 @@ with open(file_name, "r") as file:
     for row in reader:
         # Проверка значений столбцов
         if target_status in row["Статус сделки"] and row["Общая сумма"] == "0":
-            found_records.append(row)
+            found_records.append(row["ФИО"])
             valid_rows_count += 1
         else:
             if len(row[column]) > 0:
