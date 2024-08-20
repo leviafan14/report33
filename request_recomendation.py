@@ -43,7 +43,7 @@ def send_get_request(url: str, raw_deal_id: str, access_token: str):
         print(response.text)
 
 
-url = "https://crm.talisman-online.ru/api/v1/batch"
+url = ""
 access_token = ""
 
 if __name__ == "__main__":
