@@ -22,13 +22,13 @@ column = "Сделка"
 with open(file_name, "r", encoding='utf-8') as file:
     reader = csv.DictReader(file)
     for row in reader:
-        # Проверка значений столбцов
+        # Получение записей у которых поле Сделка заполнено
         if len(row[column]) > 0:
             found_records.append({"FIO": row["ФИО"], "Deal_ID": row[column]})
             valid_rows_count += 1
 
 # Вывод количества найденных записей
-print(f"\nКоличество записей:\n{len(found_records)}")
+print(f"\nКоличество записей с непустым полем Сделка:\n{len(found_records)}")
 
 deals_with_date = []
 deals_invalid_date = []
